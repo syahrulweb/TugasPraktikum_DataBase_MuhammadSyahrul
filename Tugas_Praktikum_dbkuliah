@@ -1,0 +1,55 @@
+MariaDB [dbkuliahsyahrul]> show tables;
++---------------------------+
+| Tables_in_dbkuliahsyahrul |
++---------------------------+
+| jurusan                   |
+| mahasiswa                 |
++---------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbkuliahsyahrul]> desc jurusan;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(30) | NO   | UNI | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+2 rows in set (0.088 sec)
+
+MariaDB [dbkuliahsyahrul]> desc mahasiswa;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nim       | int(11)      | NO   |     | NULL    |                |
+| nama      | varchar(30)  | NO   |     | NULL    |                |
+| alamat    | varchar(100) | NO   |     | NULL    |                |
+| idjurusan | int(11)      | NO   |     | NULL    |                |
+| foto      | varchar(30)  | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.085 sec)
+
+MariaDB [dbkuliahsyahrul]> select * from jurusan order by id asc;
++----+--------------------+
+| id | nama               |
++----+--------------------+
+|  1 | Teknik Informatika |
+|  2 | Sistem Informasi   |
+|  3 | Bisnis Digital     |
+|  4 | Ilmu Komunikasi    |
+|  5 | Manajemen          |
++----+--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [dbkuliahsyahrul]> select * from mahasiswa;
++----+-----------+--------------------+-------------------------------------------+-----------+-------------+
+| id | nim       | nama               | alamat                                    | idjurusan | foto        |
++----+-----------+--------------------+-------------------------------------------+-----------+-------------+
+|  1 | 110223056 | Muhammad Syahrul   | Kp Loji RT 005 RW 001 Desa Tangkil        |         1 | syahrul.png |
+|  2 | 110223074 | Aditya Febriadi    | Jln Akasi No 22 RT 002 RW 002 Kota Depok  |         3 | adit.png    |
+|  3 | 110223073 | Yossy Indra Kusuma | Jln Kamu Nanyaee Bojong Gede              |         5 | yoshi.png   |
+|  4 | 110223075 | Budi Santoso       | Jln. Mentari No. 10 RT 003 RW 005 Jakarta |         3 | budi.png    |
+|  5 | 110223075 | Eko                | Jln. komando                              |         4 | eko.png     |
+|  6 | 110223038 | Sabda bersabda     | kota Jakarta                              |         6 | sabda.png   |
++----+-----------+--------------------+-------------------------------------------+-----------+-------------+
+6 rows in set (0.001 sec)
